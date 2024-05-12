@@ -1,0 +1,48 @@
+{
+    "seed": {
+        "random_seed": 0,
+        "np_random_seed": 0,
+        "os_environ_PYTHONHASHSEED": "0",
+        "torch_manual_seed": 0,
+        "torch_cuda_manual_seed": 0,
+        "torch_cuda_manual_seed_all": 0
+    },
+    "batch_size": 21,
+    "num_workers": 4,
+    "pin_mem": true,
+    "model_type": "Conformer",
+    "epochs": 100,
+    "img_Size": [512, 512],
+    "num_classes": 128,
+    "eval_image": "/root/autodl-tmp/train/646073.png",
+    "train_data_path": "/root/autodl-tmp/train",
+    "image_channels": 3,
+    "start_channels": 32,
+    "n_steps": 4,
+
+    "opt": "adamw",
+    "opt_eps": 1e-8,
+    "opt_betas": null,
+    "clip_grad": null,
+    "momentum": 0.9,
+    "weight_decay": 0.05,
+    "sched": "cosine",
+    "lr": 5e-4,
+    "lr_noise": null,
+    "lr_noise_pct": 0.67,
+    "lr_noise_std": 1.0,
+    "warmup_lr": 1e-6,
+    "min_lr": 6e-7,
+    "decay_epochs": 30,
+    "warmup_epochs": 5,
+    "cooldown_epochs": 10,
+    "patience_epochs": 10,
+    "decay_rate": 0.1,
+
+    "model_ema": true,
+    "model_ema_decay": 0.972,
+    "model_ema_force_cpu": false,
+    "eval_interval": 1,
+    "save_interval": 1
+}
+    
