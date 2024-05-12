@@ -18,4 +18,4 @@
 
 # 效果
 
-<img src="C:\Users\86133\Desktop\uNET\resource\comparison.png" style="zoom:100%;" />
+<img src="C:\Users\86133\Desktop\uNET\resource\comparison.png" style="zoom:33%;" />
