@@ -18,4 +18,4 @@
 
 # 效果
 
-![](C:\Users\86133\Desktop\uNET\resource\comparison.png)
+<img src="C:\Users\86133\Desktop\uNET\resource\comparison.png" style="zoom:100%;" />
