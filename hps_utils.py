@@ -32,7 +32,7 @@ def get_hparams_from_parser():
            Fasle表示调用该函数用于推理,无需给定config_path,不创建任何文件(夹)。
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('-t', '--train', type=int, required=True,
+    parser.add_argument('-t', '--train', type=int, default=1,
                         help='Train or eval')
     parser.add_argument('-c', '--config_path', type=str, default='./config.json',
                         help='JSON file for configuration')
