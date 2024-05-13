@@ -20,7 +20,7 @@
 
 `the_image_need_to_be_converted` 是需要生成线稿的图片的路径。
 
-`config_file` 同训练命令中的 `config_file` 。
+`config_file` 是训练出 `pretrained_model_path` 中 state_dict 的训练命令中的 `config_file` 。
 
 # 效果
 
