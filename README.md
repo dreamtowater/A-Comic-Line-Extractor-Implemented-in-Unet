@@ -2,7 +2,7 @@
 
 ## 训练
 
-使用 `
+在当前工程目录下使用 `
 !python train.py -c config_flie -d your_model_dir -m your_model_name
 ` 命令进行训练。
 
@@ -14,7 +14,13 @@
 
 ## 生成
 
+在当前工程目录下使用 `!python generate_sketch.py -m pretrained_model_path -i the_image_need_to_be_converted -c config_file` 生成线稿，线稿会直接保存在当前工程目录下。
 
+`pretrained_model_path` 是训练好的模型的 state_dict 的保存路径。
+
+`the_image_need_to_be_converted` 是需要生成线稿的图片的路径。
+
+`config_file` 同训练命令中的 `config_file` 。
 
 # 效果
 

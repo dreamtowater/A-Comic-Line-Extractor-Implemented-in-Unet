@@ -8,7 +8,7 @@ from torchvision import transforms as tf
 
 from data_tools import build_transform
 from modules import Unet
-
+from hps_utils import HParams
 
 
 @torch.no_grad
@@ -17,8 +17,8 @@ def generate_one_sketch(model, img_path, is_image_sketch, img_Size, save_name, *
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     if type(model) is str:
-        state_dict = torch.load(model)
-        model = Unet(model_kwargs)
+        state_dict = torch.load(model, map_location=device)
+        model = Unet(**model_kwargs)
         model.load_state_dict(state_dict)
     model.to(device)
     model.eval()
@@ -41,6 +41,20 @@ if __name__=='__main__':
                         help='State_dict file path')
     parser.add_argument('-i', '--image_path', type=str, required=True,
                         help='Image file path')
-    parser.add_argument('-c', '--config_path', type=str, default=None,
+    parser.add_argument('-c', '--config_path', type=str, default='./config.json',
                         help='JSON file for configuration')
     args = parser.parse_args()
+
+    with open(args.config_path, "r") as f: 
+        hps = HParams(**json.loads(f.read()))
+
+    model_kwargs = dict(
+        in_channels = hps.image_channels, 
+        start_channels = hps.start_channels, 
+        out_channels = hps.num_classes, 
+        n_steps = hps.n_steps
+    )
+
+    save_name = os.path.basename(args.image_path)[:-4] + "-sketch.png"
+
+    generate_one_sketch(args.model_path, args.image_path, False, hps.img_Size, save_name, **model_kwargs)
